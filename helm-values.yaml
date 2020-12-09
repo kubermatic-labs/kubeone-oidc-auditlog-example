@@ -1,0 +1,22 @@
+dex:
+  ingress:
+    host: dex.controlplane.example.com
+
+  connectors:
+    - type: github
+      id: github
+      name: GitHub
+      config:
+        clientID: <GitHub OAuth Client ID here>
+        clientSecret: <GitHub OAuth Client Secret here>
+        redirectURI: https://dex.controlplane.example.com/dex/callback
+        orgs:
+        - name: exampleorg
+
+  clients:
+    - id: kubernetes
+      name: Kubernetes Cluster Authentication
+      secret: <generate random secret here>
+      RedirectURIs:
+      # for authentication from kubectl oidc-login plugin
+      - http://localhost:8000
