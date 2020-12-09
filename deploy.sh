@@ -41,7 +41,7 @@ kubectl apply --filename charts/cert-manager/crd/
 helm --namespace cert-manager upgrade --create-namespace --install --values values.yaml cert-manager ./charts/cert-manager/
 
 # finally install Dex
-helm --namespace dex upgrade --create-namespace --install --values values.yaml dex ./charts/oauth/
+helm --namespace kube-system upgrade --create-namespace --install --values values.yaml dex ./charts/oauth/
 
 # setup permissions
 kubectl apply --filename manifests/rbac.yaml
