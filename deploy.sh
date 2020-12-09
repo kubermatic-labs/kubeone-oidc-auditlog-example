@@ -25,7 +25,7 @@ export KUBECONFIG=$(realpath example-kubeconfig)
 # get Helm charts from Kubermatic
 KKP_VERSION=v2.15.5
 wget "https://github.com/kubermatic/kubermatic/releases/download/${KKP_VERSION}/kubermatic-ce-${KKP_VERSION}-linux-amd64.tar.gz"
-tar xzf "kubermatic-ce-${KKP_VERSION}-linux-amd64.tar.gz" && rm "kubermatic-ce-${KKP_VERSION}-linux-amd64.tar.gz"
+tar xzf "kubermatic-ce-${KKP_VERSION}-linux-amd64.tar.gz" charts && rm "kubermatic-ce-${KKP_VERSION}-linux-amd64.tar.gz"
 
 # setup nginx-ingress-controller (needs Helm 3.x)
 helm --namespace nginx-ingress-controller upgrade --create-namespace --install --values values.yaml nginx-ingress-controller ./charts/nginx-ingress-controller/
