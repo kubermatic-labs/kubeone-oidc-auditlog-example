@@ -1,4 +1,8 @@
 dex:
+  certIssuer:
+    # name of the clusterIssuer created in previous step. (e.g. letsencrypt-prod)
+    name: letsencrypt-prod 
+    kind: ClusterIssuer
   ingress:
     host: dex.controlplane.example.com
 
